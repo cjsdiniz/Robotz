@@ -4,12 +4,27 @@
 import java.awt.*;
 import java.awt.event.*;
 
-public class Robotz extends Canvas implements MouseMotionListener // extends Applet
+public class Robotz // extends Applet
 {
+	// public void init() {
+	public static void main() {
+		// add(new Robot(Color.blue));
+		// add(new Robot(Color.red));
+		// add(new Robot(Color.green));
+		Robot blue = new Robot(Color.blue);
+		Robot red = new Robot(Color.red);
+		Robot green = new Robot(Color.green);
+		blue.setVisible(true);
+		red.setVisible(true);
+		green.setVisible(true);
+	}
+}
+
+class Robot extends Canvas implements MouseMotionListener {
 	private Color myColor;
 	private Point myLocation;
 
-	public Robotz(Color theColor) {
+	public Robot(Color theColor) {
 		setMyColor(theColor);
 		setSize(50, 50);
 		setBackground(theColor);
@@ -43,15 +58,5 @@ public class Robotz extends Canvas implements MouseMotionListener // extends App
 		g.drawLine(10, 40, 40, 40);
 		g.drawRect(15, 5, 5, 15);
 		g.drawRect(30, 5, 5, 15);
-	}
-
-	// public void init() {
-	public static void main(String[] args) {
-		Robotz blue = new Robotz(Color.blue);
-		Robotz red = new Robotz(Color.red);
-		Robotz green = new Robotz(Color.green);
-		blue.setVisible(true);
-		red.setVisible(true);
-		green.setVisible(true);
 	}
 }
